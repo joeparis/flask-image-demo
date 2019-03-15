@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hello from Flask</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='main.css') }}">
+</head>
+
+<body>
+    {%if name %}
+    <h1>Say Hello to {{ name.capitalize() }}</h1>
+    <figure>
+        <img src="static/images/{{ name }}.png" alt="A picture of {{ name.capitalize() }}">
+    </figure>
+    {%else%}
+    <h1>Demo</h1>
+    <p>To see images selected and loaded dynamically, point your browser at the following urls:</p>
+    <ul>
+        <li><a href="//localhost:5000/mike">localhost:5000/mike</a></li>
+        <li><a href="//localhost:5000/jay">localhost:5000/jay</a></li>
+    </ul>
+
+    {%endif%}
+</body>
+
+</html>
